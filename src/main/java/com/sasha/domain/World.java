@@ -1,9 +1,12 @@
 package com.sasha.domain;
 
-import java.util.List;
+import java.util.Map;
 
 public class World {
-    List<Character> characters;
-    List<Room> rooms;
+
+    private Player player;
+
+    private Map<Coordinates, Room> map;
+
 
 }

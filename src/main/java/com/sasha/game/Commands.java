@@ -1,7 +1,5 @@
 package com.sasha.game;
 
-import com.sasha.domain.Attributes;
-
 public enum Commands {
 
     STARTED(new CreatePlayer()),
