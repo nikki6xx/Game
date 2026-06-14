@@ -2,7 +2,10 @@ package com.sasha.domain;
 
 import com.sasha.domain.parameters.Attributes;
 import com.sasha.domain.parameters.Experience;
-import com.sasha.domain.parameters.Health;
+import com.sasha.domain.parameters.ItemAttributes;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Player extends Character {
 
@@ -13,7 +16,9 @@ public class Player extends Character {
 
     public Player(String name, Attributes attributes, Inventory inventory) {
         super(name, attributes);
-        this.inventory = inventory;
+
+        this.inventory = new Inventory(setDefaultItems());
+
         this.experience = new Experience();
     }
 
@@ -31,6 +36,30 @@ public class Player extends Character {
 
     public void setExperience(Experience experience) {
         this.experience = experience;
+    }
+
+    private List<Item> setDefaultItems() {
+
+        List<Item> bag = new ArrayList<>();
+
+        Armor armor = new Armor(
+                "Плащ",
+                100,
+                new ItemAttributes(2, 0, 0),
+                1
+        );
+        Weapon weapon = new Weapon(
+                "Палка",
+                100,
+                new ItemAttributes(1, 0, 0),
+                2
+        );
+
+        bag.add(armor);
+        bag.add(weapon);
+
+        return bag;
+
     }
 
     // сделать стартовый инвентарь
