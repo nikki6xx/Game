@@ -67,6 +67,9 @@ public class Character {
         this.attributes = attributes;
     }
 
+    public boolean isAlive() {
+        return health != null && health.getCurrentHealth() > 0;
+    }
 
     private void setStartHp() {
 
