@@ -1,11 +1,13 @@
 package com.sasha.game;
 
+import com.sasha.domain.dictionary.MenuCommand;
+
 public enum Commands {
 
-    STARTED(new CreatePlayer()),
+    CREATE_PLAYER(new CreatePlayer()),
     START_BATTLE(new Battle());
 
-    private RunProcess runProcess;
+    private final RunProcess runProcess;
 
     public RunProcess getRunProcess() {
         return runProcess;
